@@ -3,72 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Assignment</title>
+    <title>Adii</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        header {
-            background-color: #6200ea;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        main {
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .card h3 {
-            margin: 0;
-            padding: 10px;
-            font-size: 18px;
-            text-align: center;
-        }
-        footer {
-            background-color: #6200ea;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
+/* Base styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f0e7; /* Light beige background to match village life */
+    background-image: url('bg.jpg'); /* Optional: You can add an image by replacing 'your-image-url.jpg' */
+    background-size: cover; /* Cover the entire page with the background */
+    background-position: center;
+    color: #3e3a35; /* Dark brown text for better readability */
+    transition: background-color 0.3s ease;
+}
+
+header {
+    background-color: #6a4e23; /* Earthy brown for the header */
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: #f4e1c1; /* Soft yellowish text for the heading */
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #d0b18e; /* Warm light beige text for description */
+}
+
+.content {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.content h2 {
+    font-size: 2.2rem;
+    color: #6a4e23; /* Earthy brown color */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #5a4b42; /* Darker brown text */
+}
+
+/* Image Section Styling */
+.image-section {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between images */
+}
+
+.image-card {
+    text-align: center;
+    background-color: #fff; /* White background for images */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.image-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.image-card img {
+    width: 100%;
+    max-width: 600px; /* Control image size */
+    height: auto;
+    border: 3px solid #6a4e23; /* Earthy brown border around images */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for images */
+    transition: transform 0.3s ease;
+}
+
+.image-card img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Caption Styling with Sliding Effect */
+.image-card .caption {
+    margin-top: 15px;
+    font-size: 1.3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Different font for caption */
+    font-weight: bold;
+    color: #6a4e23; /* Earthy brown for captions */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 1s ease-out forwards;
+}
+
+.image-card .caption:hover {
+    color: #f1a846; /* Warm orange for hover effect */
+}
+
+/* Description Styling */
+.image-card .description {
+    font-size: 1.1rem;
+    font-family: 'Georgia', serif; /* Different font for description */
+    font-weight: normal;
+    line-height: 1.6;
+    color: #5a4b42; /* Dark brown color for description */
+    margin-top: 10px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #6a4e23; /* Earthy brown footer */
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    margin-top: 30px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
     </style>
 </head>
 <body>
     <header>
-        <h1>SAAD HUSSAIN</h1>
-        <p>Welcome to my single-page website for my university assignment</p>
+        <h1>Makli Necropolis And Life's Of People in Haleeji Lake</h1>
     </header>
-    <main>
-        <!-- Example for 1 picture -->
-        <div class="card">
-            <img src="image1.jpg" alt="Description of image 1">
-            <h3>Description of Image 1</h3>
+    <div class="content">
+        <div class="image-section">
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">In the heart of Samarkand, under the vast Uzbek sky, the tomb of Baqi Baig stood quietly in 2025, reminding noble man from the 16th century. His tomb, built in 1640, he was the significant figure during the Timurid Empire. On a warm winter morning in 2025, a curious traveler named Saad Hussain stood near the monument, admiring the intricate architecture and wondering about the life of Baqi Baig. It was a place where time stood still, and history was both remembered and honored. </div>
+                <img src="first.jpg" alt="Memorable Moment 1">
+                <div class="caption">In 1640, the tomb of Baqi Baig in Samarkand became an eternal tribute to the Uzbek hero and military leader. [Photo by Saad Hussain/Bahria University]</div>
+            </div>
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">By the 15th century, ornate rosettes and circular designs were being introduced into graves. More intricate patterns and Arabic calligraphy with biographical information about the burial body arose. </div>
+                <img src="second.jpg" alt="Memorable Moment 2">
+                <div class="caption">Arabic artwork at a decorated grave in Necropolis </div>
+            </div>
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">The huge Necropolis of Makli is among the immense place of the world. At that place, the tomb of saints, governors, scholars, kings, queens and philosophers were buried. Their tombs were made with colorful bricks and yellow lime stone monuments, and even some were ornate with glazed tiles. </div>
+                <img src="third.jpg" alt="Memorable Moment 3">
+                <div class="caption">Huge Necropolis of Makli With Lots of Graveyard </div>
+            </div>
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">Thatta, once the medieval capital of Sindh, boasts a rich and complex history marked by the influence of various dynasties. Initially ruled by the Samma dynasty, the city later came under the control of the Turkhan and Arghun kings before being incorporated into the Mughal Empire. During its zenith in the 16th and 17th centuries, Thatta flourished as a vibrant cultural hub, a significant port, and a revered center of learning, housing approximately 400 educational institutions. Thatta is famed for its necropolis, which occupies 10 km2 (3.9 sq mi) on the Makli Hill and took on a quasi-sacred aspect under Jam Nizam-ud-Din's reign. </div>
+                <img src="fourth.jpg" alt="Memorable Moment 3">
+                <div class="caption">Thatta is a place with turbulent history </div>
+            </div>
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">Ghulam Nabi, who is 85 year old oral historian and guider of Thatta village. He is the person with bundle of information regarding mosques,  tombs and various places in Thatta. He provide detail knowledge about each and every place to the visitors. He is the most down to earth person with zero ego and attitude. He assist every visitors kindly and as appreciation the visitors reward him money or food. </div>
+                <img src="fifth.jpg" alt="Memorable Moment 3">
+                <div class="caption">Ghulam Nabi, 85 year old, an oral historian of Thatta village</div>
+            </div>
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">The old pillars, standing since the 1500s, continue to guard the place with quiet strength and resilience. These ancient structures have weathered centuries of storms, symbolizing the enduring connection between the past and present. Each stone, worn yet steadfast, tells a story of history, heritage, and protection. Their presence is a testament to the craftsmanship and the vision of those who built them to withstand time’s passage. These pillars are protecting the Mirza Jan Baba tomb. </div>
+                <img src="sixth.jpg" alt="Memorable Moment 3">
+                <div class="caption">These ancient pillars, built in the 1500s, still stand tall, protecting the place and its history.</div>
+            </div>
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">Rashid Hussain was a beacon of hope in the poverty-stricken area of Halee Jheel, where his name was spoken with love and reverence. Regularly, he could be seen walking through the narrow, dusty lanes, carrying bags of food, clothes, and money for the poor. His generosity knew no bounds; he would visit the elderly, the sick, and the hungry, offering them not just material help, but comfort and care. The people of Halee Jheel called him a savior, as his kindness brought warmth to their hearts amidst their struggles. Rashid’s selfless acts reminded them that even in the darkest times, compassion could light the way.</div>
+                <img src="seventh.jpg" alt="Memorable Moment 3">
+                <div class="caption">Rashid Hussain: A symbol of hope and kindness in Halee Jheel, helping those in need with his caring heart.</div>
+            </div>
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">In the peaceful waters of Halee Jheel, a pair of crocodiles swam, said to be from the 15th generation. They were the descendants of the first pair that were placed in the lake during Zia-ul-Haq’s time. Over the years, the crocodiles became a symbol of remembrance for him. People believed that as long as the crocodiles lived, Zia-ul-Haq's memory would stay alive. Each year, locals visited the lake, quietly remembering the past as they watched the ancient creatures glide through the water. </div>
+                <img src="eigth.jpg" alt="Memorable Moment 3">
+                <div class="caption">Generations of crocodiles in Halee Jheel: A symbol of remembrance for Zia-ul-Haq, passing through the years.</div>
+            </div>
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">In the small village of Halee Jheel, life was hard for the fishermen, but they worked every day to catch fish from the nearby lakes. With old nets and tired hands, they caught fish like the shiny Hilsa, the strongCatla, and the smooth Rohu. After a long day, they packed the fish into baskets and took them to Gojja City in small carts, where people from Thatta, Hyderabad, and Badin came to buy fresh fish. Even though their work was tough, the fishermen knew it made the customers happy as they enjoyed the fresh fish. Their hard work showed how strong they were, even in difficult times. </div>
+                <img src="ninth.jpg" alt="Memorable Moment 3">
+                <div class="caption">Fishermen of Halee Jheel: Working hard every day to bring fresh fish to the people.</div>
+            </div>
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">Munawar was a young boy from Halee Jheel who was eager to help when Rashid Hussain came to distribute food and supplies to those in need. His job was to set up the stove and cook meals, as many people in the area didn’t know how to cook over stones and wood. With quick hands and a kind heart, Munawar made sure everyone had a warm meal. After the work was done, Rashid’s family thanked him by giving him food and money for his help. Munawar felt proud, knowing that his small effort made a big difference. </div>
+                <img src="tenth.jpg" alt="Memorable Moment 3">
+                <div class="caption">Munawar: A boy in Halee Jheel who helped cook meals and was rewarded with kindness.</div>
+            </div>
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">
+                    Ali Hassan lived in the poor village of Halee Jheel, where his family often had no food to eat. Despite his own hunger, Ali’s heart was full of kindness. Every day, he would share the little food he had with the hungry animals around him. People in the village were amazed at his generosity, as he showed that even in the hardest times, humanity and compassion can shine through. Ali’s actions inspired others to be kinder and more caring. </div>
+                <img src="eleventh.jpg" alt="Memorable Moment 3">
+                <div class="caption">Ali Hassan: A boy in Halee Jheel who, despite his own hunger, set an example of kindness by feeding animals and showing true humanity.</div>
+            </div>
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">Wasif Hussain, the son of Rashid Hussain, worked alongside his father to distribute food to those in need. As he handed out packed meals, people gathered around him with smiles, feeling comforted by his presence. Wasif’s kindness and hard work were making a real difference in their lives. His goal of helping humanity and reducing poverty was slowly becoming a reality, as more and more people felt hope in their hearts. With each meal he gave, Wasif knew he was bringing light into the lives of others. </div>
+                <img src="twelth.jpg" alt="Memorable Moment 3">
+                <div class="caption">Wasif Hussain: Following his father's footsteps, spreading hope and comfort to people through food, and working to reduce poverty in the community.</div>
+            </div>
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">
+                    Razzak, a young boy from the village, walked up to Saad Hussain, the son of Rashid Hussain, and asked him to take a picture. It was the first time in many days he had a new dress, and he was proud to wear it. Though his mother had passed away when he was born, Razzak never complained, always thankful to Allah for the blessings he had. His face beamed with happiness, showing the world that true joy comes from within, no matter whatever the hardships is going on. </div>
+                <img src="thirthteen.jpg" alt="Memorable Moment 3">
+                <div class="caption">Razzak: A boy with a heart full of gratitude, shining with happiness in his new dress despite life's challenges.</div>
+            </div>
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">Wasif Hussain, the son of Rashid Hussain, was known for his deep kindness and care. He did not only help the people of Halee Jheel, but he also made sure to feed the hungry animals around him. His face always reflected happiness as he gave food to both people and animals, showing his love and respect for all living beings. The people admired his compassion, and his actions made them believe in the goodness of humanity. Wasif's kindness was a shining example for everyone in the village.</div>
+                <img src="fourthteen.jpg" alt="Memorable Moment 3">
+                <div class="caption">Wasif Hussain: A young boy whose kindness, love, and respect for all living beings inspire others to believe in humanity.</div>
+            </div>
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">Rehan Hussain, the son-in-law of Rashid Hussain, was busy distributing food (roti) to the people in need. As he handed out the warm bread, he noticed many children shivering in the cold without proper clothes. The winter winds made their situation even harder, and the poverty in the area was clear to see. Rehan felt a deep sense of responsibility to help, as he saw the struggle on their faces. His heart ached for the children, and he promised to do everything he could to ease their suffering.</div>
+                <img src="fifthteen.jpg" alt="Memorable Moment 3">
+                <div class="caption">Rehan Hussain: Giving food to those in need, seeing the tough reality of poverty as children suffer in the cold.</div>
+            </div>
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">
+                    Bano, a young girl, was suffering from a high fever and shivering badly, but her hunger pushed her to leave the shelter tent. Despite her weakness, she made her way to get a piece of roti, knowing it was the only meal she would have for the day. Her face showed the pain and struggle she was going through, but her need for food was stronger than her sickness. Bano's helplessness was clear, as she fought to survive in the harsh conditions. </div>
+                <img src="sixteen.jpg" alt="Memorable Moment 3">
+                <div class="caption">Bano: A young girl battling fever and hunger, her face reflecting the struggle for survival in difficult times.</div>
+            </div>
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">Zeenat, the elder in her family, took care of everything after her mother-in-law passed away. She raised all her children with love and dedication. When Rashid Hussain’s family distributed sweaters, Zeenat made sure each member of her family got one that fit. Any extra sweaters that weren’t for her family, she gave away to others in need, showing no selfishness. Her actions reflected her selflessness and love for others. </div>
+                <img src="seventeen.jpg" alt="Memorable Moment 3">
+                <div class="caption">Zeenat: A caring woman who looks after her family and shares with others, always putting others first.</div>
+            </div>
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">In Halee Jheel, more than three or four families sat together, sharing a single plate of food without any fights or selfishness. Despite the tough times and poverty, the families enjoyed the meal in harmony, showing true brotherhood and kindness. Rashid Hussain and his family observed this act of unity, and it moved them deeply. The picture captured this beautiful moment, reflecting the spirit of togetherness in a time of hardship. It was a powerful reminder that even in the hardest times, kindness and unity can thrive. </div>
+                <img src="eighteen.jpg" alt="Memorable Moment 3">
+                <div class="caption">Families sharing a meal in unity and kindness, showing true brotherhood in the face of hardship in Halee Jheel.</div>
+            </div>
+            <div class="image-card">
+                <h3 class="imageHeading"></h3>
+                <div class="description">Safia, a young girl, sat with her mother as she tried to feed her a piece of roti. But at her age, she was not able to eat it properly. Her attention was caught by another girl nearby, drinking a glass of milk. Safia's hunger grew stronger, and she wished to drink the milk herself, but she couldn't. Her eyes reflected the helplessness and poverty she faced, feeling the struggle of wanting more but being unable to have it. </div>
+                <img src="nineteen.jpg" alt="Memorable Moment 3">
+                <div class="caption">Safia: A hungry child, her eyes filled with helplessness as she watches another girl drinking milk she can't have.</div>
+            </div>
         </div>
-        <!-- Repeat for all 10 images -->
-        <div class="card">
-            <img src="image2.jpg" alt="Description of image 2">
-            <h3>Description of Image 2</h3>
-        </div>
-        <!-- Add more cards for other images -->
-    </main>
+    </div>
+    <footer>
+        <p>© 2025 All rights reserved.</p>
+    </footer>
+</body>
+</html>
     <footer>
         <p>© 2025 SAAD HUSSAIN. All rights reserved.</p>
     </footer>
